@@ -1,0 +1,67 @@
+Enviroment GULP
+
+Check for Node and npm
+node --version
+npm --version
+
+1. Install gulp globally:
+$ npm install --global gulp-cli
+
+Create a package.json in your project directory
+npm init
+
+2. Install gulp in your project devDependencies:
+$ npm install --save-dev gulp
+
+3. Create a gulpfile.js at the root of your project:
+
+var gulp = require('gulp');
+
+gulp.task('default', function() {
+  // place code for your default task here
+   console.log('hola mundo!');
+});
+
+
+4. Run gulp:
+$ gulp
+
+
+5. GULP SASS
+npm install gulp-sass --save-dev
+
+gulp.task('sass', function(){
+   return gulp.src('scss/**/*.scss')
+       .pipe(sass())
+       .pipe(gulp.dest('app/css'))
+});
+
+gulp.task('observar', function(){
+    gulp.watch('scss/**/*.scss', ['sass'])
+});
+
+6. GULP Browsersync + Gulp.js
+npm install browser-sync --save-dev
+
+
+7. GULP
+Comprimir JS
+
+npm install --save-dev gulp-uglify
+npm install --save-dev pump
+
+
+8.- Minificar CSS
+npm install gulp-cssnano --save-dev
+
+
+
+9.- Comprension de IMAGE
+npm install --save-dev gulp-imagemin
+
+10:  Gulp + Autoprefixer
+
+$ npm install --save-dev gulp-autoprefixer
+
+
+https://www.youtube.com/watch?v=XRtmdOkBsOQ&index=8&list=PLM-Y_YQmMEqBscmoT5y_W91oUnr_D4ulf
