@@ -5,8 +5,7 @@
     function saludar(nombre) {
         console.info(nombre, ', un saludo desde DOPodcast');
     }
-    saludar(nombrar('Jorge32'));
+    saludar(nombrar('Jorge Callalle'));
     console.log("Good bye");
-
 
 })();
