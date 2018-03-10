@@ -1,26 +1,29 @@
-$color-dark: coral;
-$color-white: #ffffff;
+// Sass libraries
 
-body {
-  background-color: $color-dark;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 100;
-  & p {
-    color: $color-white;
-  }
+//Project dependencies
+@import 'project-dependencies/variables';
+@import 'project-dependencies/helpers';
+@import 'project-dependencies/fonts';
+
+// JS dependencies
+
+// Patterns
+@import 'patterns/general';
+@import 'patterns/layout';
+@import 'patterns/buttons';
+
+// Sections
+@import 'sections/header';
+@import 'sections/footer';
+
+.wrapper {
+	background:coral;
 }
-a {
-  background: $color-white;
-  color: $color-dark;
-  display: inline-block;
-  padding: 2px 5px;
+.jorge {
+	color:blue;
 }
 
-main {
-  display: flex;
-  justify-content: center;
-  & div {
-    background: #cccccc;
-  }
-
+.flex {
+	display:flex;
+	display:inline-flex;
 }

@@ -22,7 +22,6 @@ gulp.task('default', function() {
    console.log('hola mundo!');
 });
 
-
 4. Run gulp:
 $ gulp
 
@@ -50,10 +49,8 @@ Comprimir JS
 npm install --save-dev gulp-uglify
 npm install --save-dev pump
 
-
 8.- Minificar CSS
 npm install gulp-cssnano --save-dev
-
 
 
 9.- Comprension de IMAGE
@@ -63,5 +60,7 @@ npm install --save-dev gulp-imagemin
 
 $ npm install --save-dev gulp-autoprefixer
 
-
 https://www.youtube.com/watch?v=XRtmdOkBsOQ&index=8&list=PLM-Y_YQmMEqBscmoT5y_W91oUnr_D4ulf
+
+11.-gulp-htmlmin
+npm install --save gulp-htmlmin
