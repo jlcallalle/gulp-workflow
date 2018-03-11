@@ -47,3 +47,8 @@
     position: absolute;
     width: 1px;
 }
+
+@mixin margen($vertical, $horizontal) {
+    margin: $vertical  $horizontal;
+}
+

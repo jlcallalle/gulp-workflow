@@ -39,9 +39,9 @@ gulp.task('javascript', function () {
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('css', function(){
-   //return gulp.src('scss/**/*.scss')
-   return gulp.src('scss/main.scss')
-       .pipe(sass())
+   return gulp.src('scss/**/*.scss')
+   //return gulp.src('scss/main.scss')
+       .pipe(sass().on('error', sass.logError)) // Passes it through a gulp-sass, log errors to console
        //.pipe(cssnano())
        .pipe(autoprefixer({
             browsers: ['last 5 versions'],

@@ -1,120 +1,16 @@
-@import 'colores';
-@import 'mixins';
+// Sass libraries
+@import '../bower_components/normalize.css/normalize';
+@import '../bower_components/sass-mediaqueries/media-queries';
 
-body {
-	background-color: $color-corporativo;
-}
-header {
-	background-color: $verde;
-	height:150px;
-	display:flex;
-	justify-content:center;
-	align-item:center;
-	h1 {
-		font-size:20px;
-		color:white;
-		span {
-			color:orange;
-		}
-	}
+// Project dependencies
+@import 'project-dependencies/variables';
+@import 'project-dependencies/helpers';
+@import 'project-dependencies/fonts';
 
-}
+// Sections
+@import 'sections/header';
+@import 'sections/footer';
 
+// Pages
+@import 'home';
 
-p:first-of-type {
-	 @include margen(10px, 50px);
-}
-p:last-of-type {
-	 @include margen(80px, 120px);
-}
-
-
-//Extend/Inheritance  - Alertas varias
-
-.alerta {
-	padding: 20px;
-	border-radius:10px;
-	display:flex;
-	justify-content:center;
-	alignt-items:center;
-	color:black;
-	font-family:sans-serif;
-	margin:10px;
-	box-shadow: 1px 1px 5px black;
-	text-shadow: 1px 1px 1px white;
-}
-
-.exito {
-	@extend .alerta;
-	background:green;
-}
-
-.atencion {
-	@extend .alerta;
-	background:yellow;
-}
-
-.error {
-	@extend .alerta;
-	background:red;
-}
-
-// This CSS won't print because %equal-heights is never extended.
-%equal-heights {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-// This CSS will print because %message-shared is extended.
-%message-shared {
-  border: 1px solid #ccc;
-  padding: 10px;
-  color: #333;
-}
-
-.message {
-  @extend %message-shared;
-}
-
-.success {
-  @extend %message-shared;
-  border-color: green;
-}
-
-.error {
-  @extend %message-shared;
-  border-color: red;
-}
-
-.warning {
-  @extend %message-shared;
-  border-color: yellow;
-}
-
-
-
-//operadores
-$ancho-total: 960px;
-$padding: 40px;
-.container { width: 100%; }
-
-
-article[role="main"] {
-  float: left;
-  width: 600px / $ancho-total * 100%;  //62.5%;
-}
-
-aside[role="complementary"] {
-  float: right;
-  width: 300px / $ancho-total * 100%;  //31.25%;
-}
-
-main {
-	@if ($ancho-total <= 1280px ) {
-		padding: $padding;
-		border:2px solid red;
-	} @else {
-		padding: $padding / 2;
-		border:2px solid blue;
-	}
-}
