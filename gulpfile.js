@@ -8,7 +8,7 @@ var htmlmin = require('gulp-htmlmin');
 var browserSync = require('browser-sync').create();
 
 
-gulp.task('default', ['css', 'javascript'], function() {
+gulp.task('default', ['html', 'css', 'javascript'], function() {
     browserSync.init({
         server: "./app"
     });
@@ -37,12 +37,14 @@ gulp.task('javascript', function () {
      .pipe(gulp.dest('app/js/dist'));
 });
 
+// Compile sass into CSS & auto-inject into browsers
 gulp.task('css', function(){
-   return gulp.src('scss/**/*.scss')
+   //return gulp.src('scss/**/*.scss')
+   return gulp.src('scss/main.scss')
        .pipe(sass())
-       .pipe(cssnano())
+       //.pipe(cssnano())
        .pipe(autoprefixer({
-            browsers: ['last 10 versions'],
+            browsers: ['last 5 versions'],
             cascade: false
         }))
        .pipe(gulp.dest('app/css'))

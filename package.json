@@ -1,13 +1,14 @@
 {
-  "name": "gulp-test",
+  "name": "Gulp",
   "version": "1.0.0",
-  "description": "app de prueba gulp",
+  "description": "Gulp exercises",
   "main": "index.html",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "repository": {
+    "url": "https://github.com/jlcallalle/gulp-workflow",
+    "type": "git"
   },
-  "author": "@jlcallalle",
-  "license": "ISC",
+  "author": "Jorge Callalle Torres <jlcallalle@gmail.com>",
+  "license": "UNLICENSED",
   "devDependencies": {
     "browser-sync": "^2.23.6",
     "gulp": "^3.9.1",
@@ -16,7 +17,6 @@
     "gulp-htmlmin": "^4.0.0",
     "gulp-imagemin": "^4.1.0",
     "gulp-sass": "^3.1.0",
-    "gulp-uglify": "^3.0.0",
-    "pump": "^3.0.0"
+    "gulp-uglify": "^3.0.0"
   }
 }
