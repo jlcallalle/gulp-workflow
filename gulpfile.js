@@ -5,6 +5,7 @@ var cssnano = require('gulp-cssnano');
 const imagemin = require('gulp-imagemin');
 const autoprefixer = require('gulp-autoprefixer');
 var htmlmin = require('gulp-htmlmin');
+var pug = require('gulp-pug');
 var browserSync = require('browser-sync').create();
 
 
@@ -17,12 +18,22 @@ gulp.task('default', ['html', 'css', 'javascript'], function() {
     gulp.watch("scss/**/*.scss", ['css']);
     gulp.watch("app/*.html").on('change', browserSync.reload);
     gulp.watch("./*.html", ['html']);
+    gulp.watch("pug/views/*.pug", ['pug']);
 });
 
 gulp.task('html', function() {
   return gulp.src('./*.html')
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest('app'));
+});
+
+
+gulp.task('pug', function buildHTML() {
+  return gulp.src('pug/views/*.pug')
+  .pipe(pug({
+    pretty:true
+  }))
+  .pipe(gulp.dest('app'));
 });
 
 gulp.task('imagenes', function() {
