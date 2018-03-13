@@ -6,6 +6,10 @@ const imagemin = require('gulp-imagemin');
 const autoprefixer = require('gulp-autoprefixer');
 var htmlmin = require('gulp-htmlmin');
 var pug = require('gulp-pug');
+var notify = require("gulp-notify");
+var plumber = require('gulp-plumber');
+
+
 var browserSync = require('browser-sync').create();
 
 
@@ -17,19 +21,21 @@ gulp.task('default', ['html', 'css', 'javascript'], function() {
     gulp.watch("app/js/*.js", ['javascript']).on('change', browserSync.reload);
     gulp.watch("scss/**/*.scss", ['css']);
     gulp.watch("app/*.html").on('change', browserSync.reload);
-    gulp.watch("./*.html", ['html']);
-    gulp.watch("pug/views/*.pug", ['pug']);
+    //gulp.watch("./*.html", ['html']);
+    gulp.watch("pug/views/*.pug", ['html']);
 });
 
-gulp.task('html', function() {
-  return gulp.src('./*.html')
-    .pipe(htmlmin({collapseWhitespace: true}))
-    .pipe(gulp.dest('app'));
-});
+// gulp.task('html', function() {
+//   return gulp.src('./*.html')
+//     .pipe(htmlmin({collapseWhitespace: true}))
+//     .pipe(gulp.dest('app'));
+// });
 
 
-gulp.task('pug', function buildHTML() {
+gulp.task('html', function buildHTML() {
   return gulp.src('pug/views/*.pug')
+  .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
+  .pipe(notify("Found file: <%= file.relative %>!"))
   .pipe(pug({
     pretty:true
   }))

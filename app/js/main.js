@@ -6,6 +6,6 @@
         console.info(nombre, ', un saludo desde DOPodcast');
     }
     saludar(nombrar('Jorge Callalle'));
-    console.log("Good bye");
+    console.log("Good bye 123");
 
 })();
