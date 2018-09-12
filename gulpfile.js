@@ -31,9 +31,11 @@ var browserSync = require('browser-sync').create();
     progressive: true
   };
 
+
 gulp.task('default', ['html', 'css', 'js'], function() {
     browserSync.init({
-        server: `${dir.dist}`
+        server: `${dir.dist}`,
+        plugins: ['bs-console-qrcode'],
     });
     gulp.watch("src/**/*.js", ['js']).on('change', browserSync.reload);
     gulp.watch("src/scss/**/*.scss", ['css']);
