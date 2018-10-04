@@ -15,3 +15,11 @@ $max-width: 1180px;
     @include contenedor;
     padding: 0 20px;
 }
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
